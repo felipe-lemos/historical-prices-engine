@@ -6,8 +6,11 @@ import { assertError, assertString } from '../utils/assert.utils';
 import {
  createProductUpdateExtension
 } from './actions';
+import { readConfiguration } from '../utils/config.utils';
 
-const CONNECT_APPLICATION_URL_KEY = 'CONNECT_SERVICE_URL';
+
+
+const CONNECT_APPLICATION_URL_KEY =  readConfiguration().applicationUrl;
 
 async function postDeploy(properties: Map<string, unknown>): Promise<void> {
   const applicationUrl = properties.get(CONNECT_APPLICATION_URL_KEY);
