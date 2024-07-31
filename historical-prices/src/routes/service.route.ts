@@ -8,7 +8,16 @@ const serviceRouter = Router();
 serviceRouter.post('/', (req, res) => {
   logger.info('Service post message received');
   logger.info('Request body: ' + JSON.stringify(req.body));
-  apiSuccess(200, ['Update'], res);
+  apiSuccess(
+    200,
+    [
+      {
+        action: 'setFirstName',
+        firstName: 'Dummy',
+      },
+    ],
+    res
+  );
 
   /**
   try {
