@@ -9,12 +9,13 @@ export const errorMiddleware: ErrorRequestHandler = (
   const isDevelopment = process.env.NODE_ENV === 'development';
 
   if (error instanceof CustomError) {
+    /**
     res.status(error.statusCode as number).json({
       message: error.message,
       errors: error.errors,
       stack: isDevelopment ? error.stack : undefined,
     });
-
+ */
     return;
   }
 

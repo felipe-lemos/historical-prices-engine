@@ -11,7 +11,7 @@ import ServiceRoutes from './routes/service.route';
 import { logger } from './utils/logger.utils';
 
 import { readConfiguration } from './utils/config.utils';
-import { errorMiddleware } from './middleware/error.middleware';
+//import { errorMiddleware } from './middleware/error.middleware';
 
 // Read env variables
 readConfiguration();
@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/service', ServiceRoutes);
 
 // Global error handler
-app.use(errorMiddleware);
+//app.use(errorMiddleware);
 
 // Listen the application
 const server = app.listen(PORT, () => {
