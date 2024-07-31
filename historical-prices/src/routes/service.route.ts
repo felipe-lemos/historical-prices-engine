@@ -5,7 +5,7 @@ import { logger } from '../utils/logger.utils';
 
 const serviceRouter = Router();
 
-serviceRouter.post('/historical-prices', (req, res) => {
+serviceRouter.post('/', (req, res) => {
   logger.info('Service post message received');
   logger.info('Request body: ' + JSON.stringify(req.body));
   logger.info(res);
