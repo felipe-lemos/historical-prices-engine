@@ -3,14 +3,9 @@ dotenv.config();
 
 import { createApiRoot } from '../client/create.client';
 import { assertError, assertString } from '../utils/assert.utils';
-import {
- createProductUpdateExtension
-} from './actions';
-import { readConfiguration } from '../utils/config.utils';
+import { createProductUpdateExtension } from './actions';
 
-
-
-const CONNECT_APPLICATION_URL_KEY =  readConfiguration().applicationUrl;
+const CONNECT_APPLICATION_URL_KEY = 'CONNECT_SERVICE_URL';
 
 async function postDeploy(properties: Map<string, unknown>): Promise<void> {
   const applicationUrl = properties.get(CONNECT_APPLICATION_URL_KEY);
@@ -19,7 +14,6 @@ async function postDeploy(properties: Map<string, unknown>): Promise<void> {
 
   const apiRoot = createApiRoot();
   await createProductUpdateExtension(apiRoot, applicationUrl);
- 
 }
 
 async function run(): Promise<void> {

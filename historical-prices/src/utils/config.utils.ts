@@ -15,7 +15,6 @@ export const readConfiguration = () => {
     projectKey: process.env.CTP_PROJECT_KEY as string,
     scope: process.env.CTP_SCOPE,
     region: process.env.CTP_REGION as string,
-    applicationUrl: process.env.CONNECT_SERVICE_URL as string,
   };
 
   const validationErrors = getValidateMessages(envValidators, envVars);
